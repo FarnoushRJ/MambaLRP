@@ -1,0 +1,8 @@
+numpy
+torch
+transformers==4.40.1
+datasets==2.14.5
+causal-conv1d>=1.2.0
+mamba-ssm
+einops
+captum
