@@ -14,6 +14,14 @@ This is the official implementation of the paper "[MambaLRP: Explaining Selectiv
       primaryClass={cs.LG}
 }
 ```
+
+<div align="center">
+    
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/FarnoushRJ/MambaLRP/blob/main/minimal_demo.ipynb)
+[![License](https://img.shields.io/github/license/FarnoushRJ/MambaLRP)]([https://github.com/FarnoushRJ/MambaLRP/blob/master/LICENSE](https://github.com/FarnoushRJ/MambaLRP/blob/main/LICENSE))
+
+</div>
+
 <p align="left">
   <img src="assets/about.png", height='50'/>
 </p>
@@ -30,14 +38,14 @@ This is the official implementation of the paper "[MambaLRP: Explaining Selectiv
 
 ```python
 !git clone https://github.com/FarnoushRJ/MambaLRP.git
-!pip install -e ./MambaLRP --quiet
+!pip install git+file:///content/MambaLRP --quiet
 ```
 
 <p align="left">
   <img src="assets/todo.png", height='50'/>
 </p>
 
-- [ ] Add demo notebooks.
+- [x] Add demo notebooks.
 - [ ] Add LRP for Vision Mamba.
 
 <p align="left">
