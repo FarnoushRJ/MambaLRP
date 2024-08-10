@@ -45,8 +45,10 @@ This is the official implementation of the paper "[MambaLRP: Explaining Selectiv
   <img src="assets/todo.png", height='50'/>
 </p>
 
-- [x] Add demo notebooks.
+- [x] Add LRP for Mamba.
+- [x] Add a demo notebook.
 - [ ] Add LRP for Vision Mamba.
+- [ ] Add evaluation codes.
 
 <p align="left">
   <img src="assets/acknowledgements.png", height='50'/>
