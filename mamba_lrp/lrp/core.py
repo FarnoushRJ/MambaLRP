@@ -34,7 +34,7 @@ class ModifiedLinear(Module):
 
         if self.transform is None:
             self.modifiers = None
-        elif transform == 'gamma':
+        elif self.transform == 'gamma':
             self.modifiers = [
                 modified_layer(layer=self.fc, transform=gamma(gam=0.25, minimum=0)),  # Pos
                 modified_layer(layer=self.fc, transform=gamma(gam=0.25, maximum=0, modify_bias=False)),  # Neg
@@ -104,7 +104,7 @@ class ModifiedConv(Module):
 
         if self.transform is None:
             self.modifiers = None
-        elif transform == 'gamma':
+        elif self.transform == 'gamma':
             self.modifiers = [
                 modified_layer(layer=self.conv, transform=gamma(gam=0.25, minimum=0)),
                 modified_layer(layer=self.conv, transform=gamma(gam=0.25, maximum=0, modify_bias=False)),
@@ -121,7 +121,7 @@ class ModifiedConv(Module):
 
         if self.transform is None:
             return z
-        elif transform == 'gamma':
+        elif self.transform == 'gamma':
             inputs = [
                 x.clamp(min=0),
                 x.clamp(max=0),
@@ -193,7 +193,7 @@ class ModifiedSoftPlus(Module):
        :param act: an activation layer (torch.nn.Softplus).
        """
         super(ModifiedSoftPlus, self).__init__()
-        self.modified_act = nn.ReLU()
+        self.modified_act = nn.Identity()
         self.act = act
         self.transform = transform
 
@@ -204,7 +204,7 @@ class ModifiedSoftPlus(Module):
         z = self.act(x)
         if self.transform is None:
             return z
-        else:
+        elif self.transform == 'identity':
             zp = self.modified_act(x)
             zp = stabilize(zp)
             return zp * (z / zp).data
@@ -253,7 +253,7 @@ class ModifiedRMSNorm(torch.nn.Module):
 
         if self.transform is None:
             z = (x * denominator) * self.weight + self.bias if self.bias is not None else (x * denominator) * self.weight
-        else:
+        elif self.transform == 'identity':
             denominator = denominator.detach()
             z = (x * denominator) * self.weight + self.bias if self.bias is not None else (x * denominator) * self.weight
 

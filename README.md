@@ -47,12 +47,12 @@ This is the official implementation of the paper "[MambaLRP: Explaining Selectiv
 
 - [x] Add LRP for Mamba.
 - [x] Add a demo notebook.
-- [ ] Add LRP for Vision Mamba.
+- [x] Add LRP for Vision Mamba.
 - [ ] Add evaluation codes.
 
 <p align="left">
   <img src="assets/acknowledgements.png", height='50'/>
 </p>
 
-- This repo is built using components from [Hugging Face](https://huggingface.co/docs/transformers/en/model_doc/mamba) and [Mamba](https://github.com/state-spaces/mamba).
-- The logos are created using [Canva](https://www.canva.com/)
+- This repo is built using components from [Hugging Face](https://huggingface.co/docs/transformers/en/model_doc/mamba), [Mamba](https://github.com/state-spaces/mamba), and [Vision Mamba](https://github.com/hustvl/Vim).
+- The logos are created using [Canva](https://www.canva.com/).
